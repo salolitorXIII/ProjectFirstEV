@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'es.salvaaoliiver.projectfirstev'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "es.salvaaoliiver.projectfirstev"
         minSdk 24
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -30,9 +30,15 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
+
+    implementation 'androidx.fragment:fragment-ktx:1.6.1'
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
