@@ -1,8 +1,10 @@
-package es.salvaaoliiver.projectfirstev
+package es.salvaaoliiver.projectfirstev.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import es.salvaaoliiver.projectfirstev.MainActivity
+import es.salvaaoliiver.projectfirstev.R
 import es.salvaaoliiver.projectfirstev.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity(), LoginFragment.LoginListener {
@@ -26,11 +28,6 @@ class LoginActivity : AppCompatActivity(), LoginFragment.LoginListener {
     override fun onBtnRegisterSnackbarClicked() {
         val loginFragment = supportFragmentManager.findFragmentById(R.id.menuFragmentoContainer) as? LoginFragment
         loginFragment?.register()
-    }
-
-    override fun onBtnRegisterClicked() {
-        val dialog = RegisterDialog()
-        dialog.show(supportFragmentManager, "")
     }
     //END
 }

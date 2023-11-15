@@ -1,4 +1,4 @@
-package es.salvaaoliiver.projectfirstev
+package es.salvaaoliiver.projectfirstev.login
 
 import android.content.Context
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
+import es.salvaaoliiver.projectfirstev.R
 import es.salvaaoliiver.projectfirstev.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment(), View.OnClickListener {
@@ -90,7 +91,5 @@ class LoginFragment : Fragment(), View.OnClickListener {
     interface LoginListener{
         fun onBtnLoginClicked()
         fun onBtnRegisterSnackbarClicked()
-        fun onBtnRegisterClicked()
-
     }
 }
