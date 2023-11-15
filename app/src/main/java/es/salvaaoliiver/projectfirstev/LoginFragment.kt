@@ -80,7 +80,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
                 listener?.onBtnLoginClicked()
             }
             else
-                Snackbar.make(binding.root, "USUARIO O CONTRASEÑA INCORRECTOS", Snackbar.LENGTH_LONG)
+                Snackbar.make(binding.root, "USUARIO O CONTRASEÑA INCORRECTOS, si aun no tienes cuenta puedes crearla ahora mismo.", Snackbar.LENGTH_LONG)
                     .setAction("REGISTRARSE AHORA") {
                         register()
                     }.show()

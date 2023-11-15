@@ -9,13 +9,11 @@ class LoginActivity : AppCompatActivity(), LoginFragment.LoginListener {
 
     private lateinit var binding: ActivityLoginBinding
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
     }
 
 
