@@ -18,8 +18,6 @@ class LoginFragment : Fragment(), View.OnClickListener {
 
     private val usuarios: MutableList<String> = mutableListOf("Salva-1234")
 
-    private var registrado: Boolean = false
-
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -55,10 +53,10 @@ class LoginFragment : Fragment(), View.OnClickListener {
         }
     }
 
-    fun comprobarUserPassword(txtUsuario: String, txtPassword: String): Boolean {
+    private fun comprobarUserPassword(txtUsuario: String, txtPassword: String): Boolean {
         for (u: String in usuarios){
-            val u_User: List<String> = u.split("-")
-            if (u_User.get(0).equals(txtUsuario) && u_User.get(1).equals(txtPassword)){
+            val uUserPassword: List<String> = u.split("-")
+            if (uUserPassword.get(0) == txtUsuario && uUserPassword.get(1) == txtPassword){
                 return true
             }
         }
@@ -78,8 +76,9 @@ class LoginFragment : Fragment(), View.OnClickListener {
         if (binding.inputUser.text.isNullOrEmpty() || binding.inputPassword.text.isNullOrEmpty()) {
             Toast.makeText(context, "RELLENA LOS CAMPOS", Toast.LENGTH_SHORT).show()
         } else {
-            if (comprobarUserPassword(binding.inputUser.text.toString(), binding.inputPassword.text.toString()))
-                listener?.onBtnLoginClicked(registrado)
+            if (comprobarUserPassword(binding.inputUser.text.toString(), binding.inputPassword.text.toString())) {
+                listener?.onBtnLoginClicked()
+            }
             else
                 Snackbar.make(binding.root, "USUARIO O CONTRASEÑA INCORRECTOS", Snackbar.LENGTH_LONG)
                     .setAction("REGISTRARSE AHORA") {
@@ -89,7 +88,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
     }
 
     interface LoginListener{
-        fun onBtnLoginClicked(registrado: Boolean)
+        fun onBtnLoginClicked()
         fun onBtnRegisterSnackbarClicked()
         fun onBtnRegisterClicked()
 

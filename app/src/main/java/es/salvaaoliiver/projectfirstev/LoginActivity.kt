@@ -20,17 +20,12 @@ class LoginActivity : AppCompatActivity(), LoginFragment.LoginListener {
 
 
     // LoginFragment.LoginListener
-    override fun onBtnLoginClicked(registrado: Boolean) {
-        if (registrado){
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        } else {
-
-        }
+    override fun onBtnLoginClicked() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 
     override fun onBtnRegisterSnackbarClicked() {
-        // Manejar la acción de registro desde aquí
         val loginFragment = supportFragmentManager.findFragmentById(R.id.menuFragmentoContainer) as? LoginFragment
         loginFragment?.register()
     }
