@@ -10,10 +10,21 @@ import es.salvaaoliiver.projectfirstev.databinding.ActivityMainBinding
 import androidx.fragment.app.Fragment
 import es.salvaaoliiver.projectfirstev.add.AddFragment
 import es.salvaaoliiver.projectfirstev.add.Recipe
+import es.salvaaoliiver.projectfirstev.add.Step
+import es.salvaaoliiver.projectfirstev.home.HomeFragment
 
 class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListener  {
 
-    private val recipesList = mutableListOf<Recipe>()
+    private val recipesList = mutableListOf(
+        Recipe(
+            "Macarrones al Horno",
+            listOf(
+                Step("Calentar el aceite de oliva en una sartén y sofreír la cebolla a fuego medio-bajo.", "drawable/macarronesuno"),
+                Step("Dejar cocer a fuego medio el tomate. Probar y ajustar de sal y pimienta.", "drawable/horno_image")
+            ), ""
+        ),
+    )
+
 
     private lateinit var binding: ActivityMainBinding
 

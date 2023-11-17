@@ -38,7 +38,7 @@ class AddFragment : Fragment() {
             val recipeTitle = binding.editTextTitle.text.toString()
             val stepsList = stepAdapter.getStepsList()
 
-            val recipe = Recipe(recipeTitle, stepsList)
+            val recipe = Recipe(recipeTitle, stepsList, "")
 
             (activity as? MainActivity)?.addRecipe(recipe)
 
