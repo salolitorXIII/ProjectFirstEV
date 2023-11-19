@@ -1,37 +1,59 @@
 package es.salvaaoliiver.projectfirstev.home
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import es.salvaaoliiver.projectfirstev.R
 import es.salvaaoliiver.projectfirstev.add.Recipe
+import es.salvaaoliiver.projectfirstev.databinding.ItemRecipeBinding
 
-class RecipesAdapter(private val recipesList: List<Recipe>) :
-    RecyclerView.Adapter<RecipesAdapter.RecipeViewHolder>() {
+class RecipesAdapter(private val listener: RecipeClickListener) :
+    ListAdapter<Recipe, RecipesAdapter.RecipeViewHolder>(RecipeDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_recipe, parent, false)
-        return RecipeViewHolder(view)
+        val binding =
+            ItemRecipeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return RecipeViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: RecipeViewHolder, position: Int) {
-        val recipe = recipesList[position]
+        val recipe = getItem(position)
         holder.bind(recipe)
     }
 
-    override fun getItemCount(): Int = recipesList.size
+    inner class RecipeViewHolder(private val binding: ItemRecipeBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
-    class RecipeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val titleTextView: TextView = itemView.findViewById(R.id.textTitle)
-        private val imageRecipeView: ImageView = itemView.findViewById(R.id.imageRecipe)
+        init {
+            binding.root.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    val recipe = getItem(position)
+                    listener.onRecipeClick(recipe)
+                }
+            }
+        }
 
         fun bind(recipe: Recipe) {
-            titleTextView.text = recipe.title
-
+            binding.apply {
+                textTitle.text = recipe.title
+                imageRecipe.setImageURI(recipe.imagePath)
+            }
         }
+    }
+
+    interface RecipeClickListener {
+        fun onRecipeClick(recipe: Recipe)
+    }
+}
+
+class RecipeDiffCallback : DiffUtil.ItemCallback<Recipe>() {
+    override fun areItemsTheSame(oldItem: Recipe, newItem: Recipe): Boolean {
+        return oldItem == newItem
+    }
+
+    override fun areContentsTheSame(oldItem: Recipe, newItem: Recipe): Boolean {
+        return oldItem == newItem
     }
 }

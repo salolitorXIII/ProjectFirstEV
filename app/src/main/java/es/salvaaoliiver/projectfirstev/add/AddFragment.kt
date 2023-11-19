@@ -51,8 +51,6 @@ class AddFragment : Fragment() {
 
             saveRecipeImages(generateRecipeId(), recipe)
 
-            (activity as? MainActivity)?.addRecipe(recipe)
-
             requireActivity().supportFragmentManager.beginTransaction()
                 .replace(R.id.menuFragmentoContainer, AddFragment())
                 .commit()

@@ -7,13 +7,10 @@ import com.google.android.material.navigation.NavigationBarView
 import es.salvaaoliiver.projectfirstev.databinding.ActivityMainBinding
 import androidx.fragment.app.Fragment
 import es.salvaaoliiver.projectfirstev.add.AddFragment
-import es.salvaaoliiver.projectfirstev.add.Recipe
 import es.salvaaoliiver.projectfirstev.home.HomeFragment
 import java.io.File
 
 class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListener  {
-
-    private val recipesList = mutableListOf<Recipe>()
 
     private lateinit var binding: ActivityMainBinding
 
@@ -34,9 +31,6 @@ class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListen
         }
 
         binding.bottomNavigation.setOnItemSelectedListener(this)
-
-        // AQUI SE CARGARIAN LAS RECETAS QUE TENEMOS EN LOCAL,       -----> NO IMPLEMENTADO
-        recipesList.addAll(loadRecipes())
     }
 
     // REPLACE FRAGMENT
@@ -69,23 +63,4 @@ class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListen
     }
     // END REPLACE FRAGMENT
 
-    // RECIPES
-    private fun loadRecipes(): List<Recipe> {
-        // FUNCION PARA CARGAR LAS RECETAS DE LA CUENTA
-        return emptyList()
-    }
-
-    fun getRecipesList(): List<Recipe> {
-        return recipesList
-    }
-
-    fun addRecipe(recipe: Recipe) {
-        recipesList.add(recipe)
-        saveRecipes(recipesList)
-    }
-
-    private fun saveRecipes(recipes: List<Recipe>) {
-        // FUNCION PARA GUARDAR LAS RECETAS DE LA CUENTA
-    }
-    //FIN RECIPES
 }
