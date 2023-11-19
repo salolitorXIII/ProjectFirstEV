@@ -16,31 +16,24 @@
 
     <ImageView
         android:id="@+id/imageViewCover"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:scaleType="centerCrop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:maxHeight="200dp"
+        android:adjustViewBounds="true"
         android:src="@drawable/placeholder_image"
-        android:layout_marginTop="16dp"/>
+        android:layout_gravity="center_horizontal"/>
 
-    <Button
-        android:id="@+id/btnSelectImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Seleccionar Imagen de Portada"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewSteps"
+    <EditText
+        android:id="@+id/editTextSteps"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_step"/>
-
-    <Button
-        android:id="@+id/btnAddStep"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Agregar Paso"/>
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Pasos de la Receta"/>
 
     <Button
         android:id="@+id/btnSaveRecipe"

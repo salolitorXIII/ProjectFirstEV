@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import es.salvaaoliiver.projectfirstev.R
 import es.salvaaoliiver.projectfirstev.add.Recipe
 
@@ -26,18 +25,13 @@ class RecipesAdapter(private val recipesList: List<Recipe>) :
 
     override fun getItemCount(): Int = recipesList.size
 
-    inner class RecipeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class RecipeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val titleTextView: TextView = itemView.findViewById(R.id.textTitle)
         private val imageRecipeView: ImageView = itemView.findViewById(R.id.imageRecipe)
 
         fun bind(recipe: Recipe) {
             titleTextView.text = recipe.title
 
-            // Carga la imagen utilizando Glide (o la biblioteca que prefieras)
-            Glide.with(itemView)
-                .load(recipe.imagePath)  // Supongamos que Recipe tiene un atributo imagePath con la ruta de la imagen
-                .placeholder(R.drawable.placeholder_image)  // Imagen de carga mientras se descarga la imagen
-                .into(imageRecipeView)
         }
     }
 }
