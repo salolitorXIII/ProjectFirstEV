@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts.*
-import es.salvaaoliiver.projectfirstev.MainActivity
 import es.salvaaoliiver.projectfirstev.R
 import es.salvaaoliiver.projectfirstev.databinding.FragmentAddBinding
 import java.io.File

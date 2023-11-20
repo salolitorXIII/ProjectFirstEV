@@ -4,4 +4,13 @@
     <string name="password">Contraseña</string>
     <string name="register">Registrarse</string>
     <string name="login">Iniciar Sesión</string>
+    <string name="home">Inicio</string>
+    <string name="search">Buscar</string>
+    <string name="add">Añadir</string>
+    <string name="drawer">Cajón</string>
+    <string name="menu">Menú</string>
+    <string name="receipe_title">Título de la receta</string>
+    <string name="receipe_steps">Pasos de la receta</string>
+    <string name="save_receipe">Guardar receta</string>
+
 </resources>

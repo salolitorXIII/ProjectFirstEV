@@ -10,4 +10,7 @@
     <string name="add">Add</string>
     <string name="drawer">Drawer</string>
     <string name="menu">Menu</string>
+    <string name="receipe_title">Receipe title</string>
+    <string name="receipe_steps">Receipe steps</string>
+    <string name="save_receipe">Save receipe</string>
 </resources>

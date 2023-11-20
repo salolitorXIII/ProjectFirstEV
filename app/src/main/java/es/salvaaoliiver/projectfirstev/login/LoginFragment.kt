@@ -73,7 +73,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
         }
     }
 
-    fun iniciarSesion(){
+    private fun iniciarSesion(){
         if (binding.inputUser.text.isNullOrEmpty() || binding.inputPassword.text.isNullOrEmpty()) {
             Toast.makeText(context, "RELLENA LOS CAMPOS", Toast.LENGTH_SHORT).show()
         } else {
