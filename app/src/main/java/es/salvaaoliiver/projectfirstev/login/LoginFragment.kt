@@ -78,7 +78,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
             Toast.makeText(context, "RELLENA LOS CAMPOS", Toast.LENGTH_SHORT).show()
         } else {
             if (comprobarUserPassword(binding.inputUser.text.toString(), binding.inputPassword.text.toString())) {
-                listener?.onBtnLoginClicked()
+                listener?.onBtnLoginClicked(binding.inputUser.text.toString(), binding.inputPassword.text.toString())
             }
             else
                 Snackbar.make(binding.root, "USUARIO O CONTRASEÑA INCORRECTOS, si aun no tienes cuenta puedes crearla ahora mismo.", Snackbar.LENGTH_LONG)
@@ -89,7 +89,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
     }
 
     interface LoginListener{
-        fun onBtnLoginClicked()
+        fun onBtnLoginClicked(usuario: String, password: String)
         fun onBtnRegisterSnackbarClicked()
     }
 }

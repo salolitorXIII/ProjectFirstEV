@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuFragment"
+    tools:context=".menu.MenuFragment"
     android:layout_marginTop="?android:attr/actionBarSize"
     android:layout_marginBottom="?android:attr/actionBarSize">
 
@@ -124,7 +124,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="240dp"
-        android:text="Upgrade to Plus, only 6000€"
+        android:text="@string/upgrade_to_plus_only_6000"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="parent"
@@ -137,7 +137,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
-        android:text="One-time payment for a lifetime."
+        android:text="@string/one_time_payment_for_a_lifetime"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

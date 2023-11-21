@@ -20,8 +20,11 @@ class LoginActivity : AppCompatActivity(), LoginFragment.LoginListener {
 
 
     // LoginFragment.LoginListener
-    override fun onBtnLoginClicked() {
-        val intent = Intent(this, MainActivity::class.java)
+    override fun onBtnLoginClicked(usuario: String, password: String) {
+        val intent = Intent(this, MainActivity::class.java).apply {
+            putExtra("USUARIO", usuario)
+            putExtra("PASSWORD", password)
+        }
         startActivity(intent)
     }
 

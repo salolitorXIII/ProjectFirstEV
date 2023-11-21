@@ -10,13 +10,17 @@
     <string name="add">Add</string>
     <string name="drawer">Drawer</string>
     <string name="menu">Menu</string>
-    <string name="receipe_title">Receipe title</string>
-    <string name="receipe_steps">Receipe steps</string>
-    <string name="save_receipe">Save receipe</string>
+    <string name="receipe_title">Recipe title</string>
+    <string name="receipe_steps">Recipe steps</string>
+    <string name="save_receipe">Save recipe</string>
     <string name="link_contacts">Link contacts</string>
     <string name="settings_and_privacy">Settings and Privacy</string>
     <string name="your_activity">Your activity</string>
     <string name="account">Account</string>
     <string name="upgrade_now">UPGRADE NOW</string>
     <string name="log_out">Log out</string>
+    <string name="upgrade_to_plus_only_6000">Upgrade to Plus, only 6000€</string>
+    <string name="one_time_payment_for_a_lifetime">One-time payment for a lifetime.</string>
+    <string name="num_of_receipes">Num of recipes</string>
+    <string name="exit">Exit</string>
 </resources>

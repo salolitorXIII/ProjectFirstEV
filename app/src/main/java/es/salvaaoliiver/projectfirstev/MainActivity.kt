@@ -11,34 +11,35 @@ import androidx.fragment.app.Fragment
 import es.salvaaoliiver.projectfirstev.add.AddFragment
 import es.salvaaoliiver.projectfirstev.home.HomeFragment
 import es.salvaaoliiver.projectfirstev.login.LoginActivity
+import es.salvaaoliiver.projectfirstev.menu.MenuFragment
 import java.io.File
 
-class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListener  {
+class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListener {
 
     private lateinit var binding: ActivityMainBinding
-
-    // VARIABLE DE CLASE FILE PARA CREAR UNAS CARPETAS EN EL METODO onCreate
     private lateinit var userImagesDirectory: File
+    var usuario: String = ""
+    var password: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-
         val view = binding.root
         setContentView(view)
 
         setSupportActionBar(binding.myToolbar)
 
-
-        // CREAR CARPETA DONDE SE ALMACENAN LAS IMAGENES DE LAS RECETAS
-        // /data/data/es.salaaoliiver.projectfirstev/user_images
         userImagesDirectory = File(filesDir, "user_images")
         if (!userImagesDirectory.exists()) {
             userImagesDirectory.mkdirs()
         }
 
         binding.bottomNavigation.setOnItemSelectedListener(this)
+
+        usuario = intent.getStringExtra("USUARIO") ?: ""
+        password = intent.getStringExtra("PASSWORD") ?: ""
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
@@ -46,14 +47,15 @@ class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListen
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
+        return when(item.itemId){
             R.id.action_logout ->{
                 val intent = Intent(this, LoginActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
-                return true
+                true
             }
-            else -> return false
+
+            else -> false
         }
     }
 
@@ -80,7 +82,7 @@ class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListen
         return false
     }
 
-    private fun loadFragment(fragment: Fragment) {
+    fun loadFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.menuFragmentoContainer, fragment)
             .commit()

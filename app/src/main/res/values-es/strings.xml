@@ -13,5 +13,13 @@
     <string name="receipe_steps">Pasos de la receta</string>
     <string name="save_receipe">Guardar receta</string>
     <string name="link_contacts">Vincular contactos</string>
-
+    <string name="settings_and_privacy">Configuración y privacidad</string>
+    <string name="your_activity">Tu actividad</string>
+    <string name="account">Cuenta</string>
+    <string name="upgrade_now">SUSCRIBIRSE AHORA</string>
+    <string name="log_out">Cerrar sesión</string>
+    <string name="upgrade_to_plus_only_6000">Mejora a Plus, solo 6000€</string>
+    <string name="one_time_payment_for_a_lifetime">Pago único de por vida.</string>
+    <string name="num_of_receipes">Número de recetas</string>
+    <string name="exit">Salir</string>
 </resources>
