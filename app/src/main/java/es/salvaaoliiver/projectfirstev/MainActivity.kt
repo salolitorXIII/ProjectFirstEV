@@ -1,13 +1,16 @@
 package es.salvaaoliiver.projectfirstev
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import com.google.android.material.navigation.NavigationBarView
 import es.salvaaoliiver.projectfirstev.databinding.ActivityMainBinding
 import androidx.fragment.app.Fragment
 import es.salvaaoliiver.projectfirstev.add.AddFragment
 import es.salvaaoliiver.projectfirstev.home.HomeFragment
+import es.salvaaoliiver.projectfirstev.login.LoginActivity
 import java.io.File
 
 class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListener  {
@@ -20,8 +23,12 @@ class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListen
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+
         val view = binding.root
         setContentView(view)
+
+        setSupportActionBar(binding.myToolbar)
+
 
         // CREAR CARPETA DONDE SE ALMACENAN LAS IMAGENES DE LAS RECETAS
         // /data/data/es.salaaoliiver.projectfirstev/user_images
@@ -31,6 +38,23 @@ class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListen
         }
 
         binding.bottomNavigation.setOnItemSelectedListener(this)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.action_logout ->{
+                val intent = Intent(this, LoginActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+                return true
+            }
+            else -> return false
+        }
     }
 
     // REPLACE FRAGMENT

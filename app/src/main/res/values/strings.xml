@@ -14,4 +14,9 @@
     <string name="receipe_steps">Receipe steps</string>
     <string name="save_receipe">Save receipe</string>
     <string name="link_contacts">Link contacts</string>
+    <string name="settings_and_privacy">Settings and Privacy</string>
+    <string name="your_activity">Your activity</string>
+    <string name="account">Account</string>
+    <string name="upgrade_now">UPGRADE NOW</string>
+    <string name="log_out">Log out</string>
 </resources>
