@@ -13,4 +13,5 @@
     <string name="receipe_title">Receipe title</string>
     <string name="receipe_steps">Receipe steps</string>
     <string name="save_receipe">Save receipe</string>
+    <string name="link_contacts">Link contacts</string>
 </resources>

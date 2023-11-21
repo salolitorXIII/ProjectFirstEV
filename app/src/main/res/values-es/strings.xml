@@ -12,5 +12,6 @@
     <string name="receipe_title">Título de la receta</string>
     <string name="receipe_steps">Pasos de la receta</string>
     <string name="save_receipe">Guardar receta</string>
+    <string name="link_contacts">Vincular contactos</string>
 
 </resources>
